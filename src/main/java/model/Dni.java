@@ -1,5 +1,6 @@
 package model;
 
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -95,5 +96,18 @@ public class Dni {
             return false;
         }
         return dniLetters[dniNumber % 23] == Character.toUpperCase(dniLetter);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Dni dni1 = (Dni) o;
+        return Objects.equals(dni, dni1.dni);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(dni);
     }
 }
