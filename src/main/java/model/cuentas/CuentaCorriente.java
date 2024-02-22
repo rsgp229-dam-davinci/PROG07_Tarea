@@ -14,7 +14,9 @@ public abstract class CuentaCorriente extends CuentaBancaria{
     public boolean puedeCobrar(EntidadAutorizada entidadInteresada){
         if(entidadInteresada != null) {
             for (EntidadAutorizada entidad : entidadesAutorizadasAlCobro) {
-                if (entidad.getNombreEntidad().equalsIgnoreCase(entidadInteresada.getNombreEntidad()))
+                if (entidad == null)
+                    continue;
+                else if (entidad.equals(entidadInteresada))
                     return true;
             }
         }

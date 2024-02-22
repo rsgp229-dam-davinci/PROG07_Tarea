@@ -1,5 +1,7 @@
 package model.identidades;
 
+import java.util.Objects;
+
 /**
  * Clase que representa una entidad autorizada al cobro.
  *
@@ -13,4 +15,17 @@ public class EntidadAutorizada {
         this.nombreEntidad = nombreEntidad;
     }
     public String getNombreEntidad() { return nombreEntidad; }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        EntidadAutorizada that = (EntidadAutorizada) o;
+        return Objects.equals(nombreEntidad, that.nombreEntidad);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nombreEntidad);
+    }
 }

@@ -1,7 +1,7 @@
 package model.cuentas;
 
 import model.Imprimible;
-import model.identidades.Persona;
+import model.identidades.Cliente;
 
 import java.util.Objects;
 
@@ -19,15 +19,15 @@ import java.util.Objects;
  */
 public abstract class CuentaBancaria implements Imprimible {
 
-    private Persona titular;
+    private Cliente titular;
     protected double saldo;
     private Iban iban;
 
-    public Persona getTitular() {
+    public Cliente getTitular() {
         return titular;
     }
 
-    public void setTitular(Persona titular) {
+    public void setTitular(Cliente titular) {
         this.titular = titular;
     }
 
@@ -35,9 +35,11 @@ public abstract class CuentaBancaria implements Imprimible {
         return saldo;
     }
 
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
+    public void addSaldo(double cantidad){
+        saldo += cantidad;
     }
+
+    public abstract boolean substractSaldo(double cantidad);
 
     public Iban getIban() {
         return iban;
