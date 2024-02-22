@@ -1,7 +1,9 @@
-package model;
+package model.cuentas;
 
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
+import model.Imprimible;
+import model.identidades.Persona;
+
+import java.util.Objects;
 
 /**
  * Esta clase representa una cuenta bancaria genérica.
@@ -15,18 +17,11 @@ import java.util.regex.Matcher;
  *
  *
  */
-public abstract class CuentaBancaria implements Imprimible{
+public abstract class CuentaBancaria implements Imprimible {
 
     private Persona titular;
     protected double saldo;
-    private String IBAN;
-    private final String IBAN_REGEX ="^(ES)([0-9]{18}$)";
-
-    private final Pattern IBAN_pattern = Pattern.compile(IBAN_REGEX);
-    private boolean isValidIBAN (String input){
-        Matcher m = IBAN_pattern.matcher(input);
-        return m.matches();
-    }
+    private Iban iban;
 
     public Persona getTitular() {
         return titular;
@@ -44,20 +39,33 @@ public abstract class CuentaBancaria implements Imprimible{
         this.saldo = saldo;
     }
 
-    public String getIBAN() {
-        return IBAN;
+    public Iban getIban() {
+        return iban;
     }
 
-    public void setIBAN(String IBAN) {
-        this.IBAN = IBAN;
+    public void setIban(Iban iban) {
+        this.iban = iban;
     }
 
     @Override
     public String devolverInfoString(){
         StringBuilder sb = new StringBuilder();
-        sb.append("Número de cuenta: ").append(getIBAN()).append(System.lineSeparator());
+        sb.append("Número de cuenta: ").append(getIban()).append(System.lineSeparator());
         sb.append("Titular: ").append(titular.toString()).append(System.lineSeparator());
         sb.append("Saldo: ").append(getSaldo()).append(System.lineSeparator());
         return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CuentaBancaria that = (CuentaBancaria) o;
+        return Objects.equals(iban, that.iban);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(iban);
     }
 }

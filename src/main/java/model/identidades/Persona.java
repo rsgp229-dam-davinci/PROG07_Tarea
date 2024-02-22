@@ -1,4 +1,6 @@
-package model;
+package model.identidades;
+
+import model.Imprimible;
 
 import java.util.Objects;
 
@@ -9,13 +11,13 @@ import java.util.Objects;
  *
  * @author RSG-P
  */
-public class Persona implements Imprimible{
+public class Persona implements Imprimible {
     private String nombre;
     private String apellidos;
-    private Dni dni;
+    private String documento;
 
-    public Persona(Dni dni){
-        this.dni = dni;
+    public Persona(String documento){
+        this.documento = documento;
     }
 
     public void setNombre(String nombre) {
@@ -34,8 +36,8 @@ public class Persona implements Imprimible{
         return apellidos;
     }
 
-    public Dni getDni() {
-        return dni;
+    public String getDocumento() {
+        return documento;
     }
 
     /**
@@ -45,9 +47,9 @@ public class Persona implements Imprimible{
     @Override
     public String devolverInfoString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Nombre: ").append(nombre);
-        sb.append("\nApellidos: ").append(apellidos);
-        sb.append("\nDNI: ").append(dni);
+        sb.append("Nombre: ").append(nombre).append(System.lineSeparator());
+        sb.append("Apellidos: ").append(apellidos).append(System.lineSeparator());
+        sb.append("DNI: ").append(documento).append(System.lineSeparator());
         return sb.toString();
     }
 
@@ -58,7 +60,11 @@ public class Persona implements Imprimible{
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();
-        sb.append(nombre).append(" ").append(apellidos).append(", DNI ").append(dni);
+        sb.append(nombre).append(" ")
+                .append(apellidos)
+                .append(", DNI ")
+                .append(documento)
+                .append(System.lineSeparator());
         return sb.toString();
     }
 
@@ -72,11 +78,11 @@ public class Persona implements Imprimible{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Persona persona = (Persona) o;
-        return Objects.equals(dni, persona.dni);
+        return Objects.equals(documento, persona.documento);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(dni);
+        return Objects.hash(documento);
     }
 }

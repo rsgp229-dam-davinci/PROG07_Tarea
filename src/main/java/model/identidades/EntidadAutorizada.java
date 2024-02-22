@@ -1,4 +1,4 @@
-package model;
+package model.identidades;
 
 /**
  * Clase que representa una entidad autorizada al cobro.

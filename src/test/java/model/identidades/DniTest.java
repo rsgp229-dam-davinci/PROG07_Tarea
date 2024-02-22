@@ -1,6 +1,10 @@
+package model.identidades;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
-import model.Dni;
+import model.identidades.Dni;
+
+//TODO: Actualizar a JUnit5
 
 public class DniTest {
     @Test
@@ -57,4 +61,13 @@ public class DniTest {
         Dni dni2 = new Dni("97600605J");
         assertTrue(dni1.equals(dni2));
     }
+
+    @Test
+    public void testHash(){
+        Dni dni1 = new Dni("97600605J");
+        Dni dni2 = new Dni("97600605J");
+        System.out.println(dni2.hashCode());
+        assertEquals(dni1.hashCode(), dni2.hashCode());
+    }
+
 }

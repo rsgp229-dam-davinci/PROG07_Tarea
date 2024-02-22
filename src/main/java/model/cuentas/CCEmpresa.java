@@ -1,4 +1,4 @@
-package model;
+package model.cuentas;
 
 public class CCEmpresa extends CuentaCorriente{
     private double descubiertoPermitido;

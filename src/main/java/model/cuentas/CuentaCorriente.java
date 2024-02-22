@@ -1,6 +1,6 @@
-package model;
+package model.cuentas;
 
-import java.util.Optional;
+import model.identidades.EntidadAutorizada;
 
 public abstract class CuentaCorriente extends CuentaBancaria{
     private final int MAX_AUTORIDADES_AUTORIZADAS = 100;
