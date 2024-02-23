@@ -1,6 +1,9 @@
 package model.identidades;
 
 public class Empresa extends Cliente{
+    public Empresa(String cif) throws IllegalArgumentException{
+        super.setDocumento(cif);
+    }
     @Override
     public String devolverInfoString() {
         StringBuilder sb = new StringBuilder();

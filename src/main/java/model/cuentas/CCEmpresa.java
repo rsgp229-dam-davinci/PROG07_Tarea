@@ -7,7 +7,7 @@ public class CCEmpresa extends CuentaCorriente{
     private double interesPorDescubierto;
     private double comisionFijaPorCadaDescubierto;
 
-    public CCEmpresa(Empresa titular, Iban iban){
+    public CCEmpresa(Iban iban, Empresa titular){
         super.setTitular(titular);
         super.setIban(iban);
     }

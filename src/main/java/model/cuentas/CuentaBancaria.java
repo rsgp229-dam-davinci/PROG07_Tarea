@@ -53,7 +53,7 @@ public abstract class CuentaBancaria implements Imprimible {
     public String devolverInfoString(){
         StringBuilder sb = new StringBuilder();
         sb.append("Número de cuenta: ").append(getIban()).append(System.lineSeparator());
-        sb.append("Titular: ").append(titular.toString()).append(System.lineSeparator());
+        sb.append("Titular: ").append(titular.devolverInfoString()).append(System.lineSeparator());
         sb.append("Saldo: ").append(getSaldo()).append(System.lineSeparator());
         return sb.toString();
     }

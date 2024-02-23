@@ -1,7 +1,7 @@
 package model.identidades;
 public class Particular extends Cliente{
     public Particular(String dni) throws IllegalArgumentException{
-        setDocumento(dni);
+        super.setDocumento(dni);
     }
     private String apellidos;
     public String getApellidos() {

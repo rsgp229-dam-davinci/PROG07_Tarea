@@ -17,10 +17,17 @@ public class Banco {
     }
 
     public String[] listadoCuentas(){
-        String[] infoCuentas = new String[cuentas.length];
-        for (int i = 0; i < cuentas.length; i++) {
+        int openAccounts = 0;
+        for (CuentaBancaria cuenta : cuentas) {
+            if (cuenta != null) {
+                openAccounts++;
+            }
+        }
+        String[] infoCuentas = new String[openAccounts];
+        for (int i = 0, x = 0; i < cuentas.length; i++) {
             if (cuentas[i] != null) {
-                infoCuentas[i] = cuentas[i].devolverInfoString();
+                infoCuentas[x] = cuentas[i].devolverInfoString();
+                x++;
             }
         }
         return infoCuentas;
@@ -54,7 +61,7 @@ public class Banco {
         return false;
     }
 
-    public double obtenerSaldo(Iban iban) throws IllegalArgumentException{
+    public double obtenerSaldo(Iban iban){
         if (iban != null){
             for (CuentaBancaria cuenta : cuentas) {
                 if (cuenta != null && cuenta.getIban().equals(iban)) {
