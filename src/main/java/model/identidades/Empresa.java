@@ -1,5 +1,10 @@
 package model.identidades;
 
+/**
+ * Clase que representa una empresa.
+ *
+ * @author RafaelSGP
+ */
 public class Empresa extends Cliente{
     public Empresa(String cif) throws IllegalArgumentException{
         super.setDocumento(cif);

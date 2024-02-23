@@ -2,6 +2,14 @@ package model.cuentas;
 
 import model.identidades.EntidadAutorizada;
 
+/**
+ * Clase abstracta que representa una cuenta corriente. Las cuentas corrientes pueden ser de particulares (sin
+ * descubierto) o de empresa.
+ *
+ * Se ha añadido un array para registrar las entidades autorizadas al cobro y se han implementado los métodos que
+ * permiten
+ * @author Rafael SGP
+ */
 public abstract class CuentaCorriente extends CuentaBancaria{
     private final int MAX_AUTORIDADES_AUTORIZADAS = 100;
     private EntidadAutorizada[] entidadesAutorizadasAlCobro = new EntidadAutorizada[MAX_AUTORIDADES_AUTORIZADAS];

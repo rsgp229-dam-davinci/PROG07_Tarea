@@ -4,6 +4,17 @@ import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Clase que representa un IBAN.
+ *
+ * Algunos métodos son estáticos para permitir utilizarlos sin tener que instanciar la clase.
+ *
+ * La expresión regular se ha adaptado a la normativa, que indica que las letras tienen que ser mayúsculas, por lo que
+ * la regex no permite minúsculas; en caso de ser requisito, el grupo primero se sustituye por (ES|es).
+ *
+ * Al igual que en casi todas las clases del modelo, se han sobreescrito los métodos equals y hashCode para que la
+ * comparación corresponda realmente con el dato relevante de la clase; en este caso el string que representa el IBAN.
+ */
 public class Iban {
     private final static String IBAN_REGEX ="^(ES)[0-9]{22}$";
     private final static Pattern IBAN_pattern = Pattern.compile(IBAN_REGEX);

@@ -2,6 +2,13 @@ package model.cuentas;
 
 import model.identidades.Empresa;
 
+/**
+ * Clase que implementa la funcionalidad completa de una cuenta corriente de empresa.
+ * Permite las funciones respecto del descubierto y comisiones indicadas en el ejercicio.
+ *
+ * Al igual que las demás, sobreescribe la interfaz Imprimible para añadir la información propia de la cuenta
+ *
+ */
 public class CCEmpresa extends CuentaCorriente{
     private double descubiertoPermitido;
     private double interesPorDescubierto;

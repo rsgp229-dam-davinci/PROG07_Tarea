@@ -1,5 +1,16 @@
 package model.identidades;
+
+/**
+ * Clase específica que representa un cliente particular. La comparación entre clientes se realiza mediante
+ * el documento que le representa por ser un dato unívoco. La comparación se realiza gracias al método equals
+ * sobreescrito en la clase padre Cliente.
+ *
+ * Implementa la interfaz Imprimible
+ *
+ * @author Rafael SGP
+ */
 public class Particular extends Cliente{
+
     public Particular(String dni) throws IllegalArgumentException{
         super.setDocumento(dni);
     }
