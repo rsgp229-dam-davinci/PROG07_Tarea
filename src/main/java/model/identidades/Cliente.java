@@ -3,6 +3,13 @@ package model.identidades;
 import model.Imprimible;
 import java.util.Objects;
 
+/**
+ * Esta clase es una representación básica de un cliente de la entidad, con los getters y setters comunes
+ * a las clases de la jerarquía.
+ *
+ * Como en casi todas las clases del modelo, sobreescribe equals y hashCode. En este caso, la comparación se realiza
+ * mediante el documento de identidad.
+ */
 public abstract class Cliente implements Imprimible {
     private String nombre;
     private String documento;

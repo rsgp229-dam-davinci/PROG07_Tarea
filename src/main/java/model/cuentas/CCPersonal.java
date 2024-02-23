@@ -2,6 +2,11 @@ package model.cuentas;
 
 import model.identidades.Particular;
 
+/**
+ *  Implementación concreta de una Cuenta Personal. No permite descubierto pero sí el cobro de comisión de mantenimiento
+ *
+ *  Al igual que las demás, sobreescribe la interfaz Imprimible para añadir la información propia del tipo de cuenta.
+ */
 public class CCPersonal extends CuentaCorriente{
     private double comisionMantenimiento;
 

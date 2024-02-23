@@ -9,6 +9,12 @@ import model.identidades.Empresa;
 import model.identidades.Particular;
 import vista.Menus;
 
+/**
+ * Esta clase hace de controlador de de las operaciones que se solicitan en el ejercicio. Implementa exclusivamente
+ * lo solicitado.
+ *
+ * @author Rafael SGP
+ */
 public class Program {
     private Banco banco;
     public void iniciar(Banco banco){
@@ -16,6 +22,12 @@ public class Program {
         menuPrincipal();
     }
 
+    /**
+     * Método que presenta el menú principal y realiza las llamadas al resto de las funciones.
+     *
+     * El código es bastante sencillo, tanto en esta como en los demás métodos, por lo que se omiten los
+     * comentarios en el resto de métodos.
+     */
     private void menuPrincipal(){
         int option = -1;
         while (option != 0){
